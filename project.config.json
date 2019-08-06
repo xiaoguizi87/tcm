@@ -1,0 +1,22 @@
+{
+	"packOptions": {
+		"ignore": [
+			"static/functions"
+		]
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"appId": "wxf8cf7687566b7cb5"
+	},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"libVersion": "2.8.0",
+	"condition": {}
+}
