@@ -25,8 +25,6 @@
 			}
 		},
 		onLoad() {
-			// console.log('abc')
-			// console.log(medinceData.data.length)
 			this.data = JSON.parse(JSON.stringify(medinceData.data))
 		},
 		methods: {
@@ -70,7 +68,7 @@
 	}
 
 	.text {
-		font-size: 14px;
+		font-size: 16px;
 		text-align: center;
 	}
 
