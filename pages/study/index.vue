@@ -1,8 +1,8 @@
 <template>
 	<div class='container'>
 		<div class="item" v-for='(t, i) in data' :key='i' v-if='i >= currenIndex*5-5 && i < currenIndex*5 '>
-			<div class="title">{{t.name}}</div>
-			<div class="text">{{t.effect}}</div>
+      <text class="title">{{t.name}}</text>
+      <text class="text">{{t.effect}}</text>
 		</div>
 		<div class='box'>
       <button @click='goto(true)' :disabled="currenIndex === 1"> 上页</button>
@@ -68,7 +68,7 @@
 	}
 
 	.text {
-		font-size: 16px;
+		font-size: 14px;
 		text-align: center;
 	}
 
