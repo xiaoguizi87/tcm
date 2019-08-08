@@ -1,65 +1,71 @@
 {
-  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/index/index",
-      "style": {
-        "navigationBarTitleText": "趣学中草药"
-      }
-    },
-    {
-      "path": "pages/mine/index",
-      "style": {
-        "navigationBarTitleText": "趣学中草药"
-      },
-      "usingComponents": {}
-    },
-    {
-      "path": "pages/study/index",
-      "style": {
-        "navigationBarTitleText": "趣学中草药"
-      },
-      "usingComponents": {}
-    }, {
-      "path": "pages/exam/exam",
-      "style": {}
-    }
-  ],
-  "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "趣学中草药",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "color": "#999",
-    "backgroundColor": "#fafafa",
-    "selectedColor": "#333",
-    "borderStyle": "white",
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "趣学中草药"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "趣学中草药"
+			},
+			"usingComponents": {}
+		},
+		{
+			"path": "pages/study/index",
+			"style": {
+				"navigationBarTitleText": "趣学中草药"
+			},
+			"usingComponents": {}
+		}, {
+			"path": "pages/exam/exam",
+			"style": {}
+		}, {
+			"path": "pages/statics/statics",
+			"style": {},
+			"usingComponents": {
+				"ff-canvas": "@antv/f2-canvas"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "趣学中草药",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#999",
+		"backgroundColor": "#fafafa",
+		"selectedColor": "#333",
+		"borderStyle": "white",
 
-    "list": [{
-      "text": "主页",
-      "pagePath": "pages/index/index",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
-    }, {
-      "text": "测一测",
-      "pagePath": "pages/exam/exam",
-      "iconPath": "static/tabs/exam.png",
-      "selectedIconPath": "static/tabs/exam-active.png"
-    }, {
-      "text": "我的",
-      "pagePath": "pages/mine/index",
-      "iconPath": "static/tabs/mine.png",
-      "selectedIconPath": "static/tabs/mine-active.png"
-    }],
-    "position": "bottom"
-  },
-  "condition": { //模式配置，仅开发期间生效
-    "current": 0, //当前激活的模式(list 的索引项)
-    "list": [{
-      "name": "", //模式名称
-      "path": "", //启动页面，必选
-      "query": "" //启动参数，在页面的onLoad函数里面得到
-    }]
-  }
+		"list": [{
+			"text": "主页",
+			"pagePath": "pages/index/index",
+			"iconPath": "static/tabs/home.png",
+			"selectedIconPath": "static/tabs/home-active.png"
+		}, {
+			"text": "测一测",
+			"pagePath": "pages/exam/exam",
+			"iconPath": "static/tabs/exam.png",
+			"selectedIconPath": "static/tabs/exam-active.png"
+		}, {
+			"text": "我的",
+			"pagePath": "pages/mine/index",
+			"iconPath": "static/tabs/mine.png",
+			"selectedIconPath": "static/tabs/mine-active.png"
+		}],
+		"position": "bottom"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "pages/statics/statics", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
 }

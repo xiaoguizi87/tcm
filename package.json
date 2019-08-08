@@ -24,6 +24,8 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "@antv/f2-canvas": "^1.0.5",
+    "@antv/my-f2": "^1.1.6",
     "lodash.shuffle": "^4.2.0"
   },
   "devDependencies": {
