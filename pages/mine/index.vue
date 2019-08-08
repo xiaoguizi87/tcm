@@ -25,7 +25,10 @@ export default {
     },
     gotoStudy: function () {
       wx.navigateTo({ url: '/pages/study/index' })
-    }
+    },
+		onShareAppMessage: function(options) {
+			console.log('分享的代码！！')
+		}
   }
 }
 </script>
@@ -64,7 +67,7 @@ export default {
 }
 
 .bt {
-/*  margin: 16rpx;
-  width: 200rpx; */
+ margin: 16rpx;
+  /* width: 200rpx; */
 }
 </style>
