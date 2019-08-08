@@ -20,7 +20,17 @@
     -webkit-transition: width 2s;
     -o-transition: width 2s;
   }
-
+	
+	.shareBtn {
+		position: fixed;
+		bottom: 100rpx;
+		right: -5rpx;
+		width: 120rpx;
+		font-size: 10px;
+		height: 60rpx;
+		background: pink;
+	}
+	
   .container {
     display: flex;
     flex-direction: column;

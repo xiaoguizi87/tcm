@@ -1,11 +1,11 @@
 <template>
 	<div class='container'>
 		<div class="item" v-for='(t, i) in data' :key='i' v-if='i >= currenIndex*5-5 && i < currenIndex*5 '>
-      <text class="title">{{t.name}}</text>
-      <text class="text">{{t.effect}}</text>
+			<text class="title">{{t.name}}</text>
+			<text class="text">{{t.effect}}</text>
 		</div>
 		<div class='box'>
-      <button @click='goto(true)' :disabled="currenIndex === 1"> 上页</button>
+			<button @click='goto(true)' :disabled="currenIndex === 1"> 上页</button>
 			<text class="pageText">{{currenIndex}}</text>
 			<button @click='goto(false)' :disabled="currenIndex === totalPage">下页</button>
 		</div>
@@ -43,6 +43,10 @@
 					this.currenIndex = Math.min(this.totalPage, this.currenIndex + 1)
 				}
 			}
+		},
+
+		onShareAppMessage: function(options) {
+			console.log('分享的代码！！')
 		}
 	}
 </script>
@@ -64,7 +68,7 @@
 		color: #1da049;
 		margin-bottom: 28rpx 0;
 		font-size: 20px;
-    text-align: center;
+		text-align: center;
 	}
 
 	.text {
@@ -86,8 +90,8 @@
 		height: 60rpx;
 		font-size: 10px;
 	}
-  
-  .pageText {
-    line-height: 90rpx;
-  }
+
+	.pageText {
+		line-height: 90rpx;
+	}
 </style>

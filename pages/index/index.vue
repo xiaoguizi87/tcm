@@ -10,6 +10,7 @@
 				</view>
 			</view>
 		</transition>
+		<button class='shareBtn' open-type="share">分享</button>
 	</view>
 </template>
 
@@ -93,7 +94,7 @@
 					problems.push(medinceData.data[idx])
 					s.add(idx)
 				}
-				this.problems =  JSON.parse(JSON.stringify(problems))
+				this.problems = JSON.parse(JSON.stringify(problems))
 				this.randomAns = _.shuffle(problems.map(x => x.effect))
 				// console.log(problems,.this.randomAns)
 				// wx.cloud.callFunction({
@@ -117,6 +118,10 @@
 
 		created() {
 			this.fetchProblems()
+		},
+		
+		onShareAppMessage: function(options) {
+			console.log('分享的代码！！')
 		}
 	}
 </script>

@@ -4,7 +4,7 @@
 			<text class='title'><text class="medinceName">{{item.name}}</text> 的功效是：</text>
 			<radio-group @change="radioChange">
 				<view v-for="(elem, j) in item.options" :key="j" class='option'>
-					<radio :checked="checkedValues[problemIdx]" :value="elem"/><label @click="selectOption(j)">{{elem}}</label>
+					<radio :checked="checkedValues[problemIdx]" :value="elem" /><label @click="selectOption(j)">{{elem}}</label>
 				</view>
 			</radio-group>
 		</view>
@@ -14,6 +14,8 @@
 			<button @click='problemIdx++' :disabled="problemIdx === 9" class='pageBtn'>下一题</button>
 		</view>
 		<button v-if="problemIdx === 9" @click="postAnswer" type="primary">提交答案</button>
+		<button class='shareBtn' open-type="share">分享</button>
+
 	</view>
 </template>
 
@@ -109,6 +111,9 @@
 					}
 				}
 				return count * 10
+			},
+			onShareAppMessage: function(options) {
+				console.log('分享的代码！！')
 			}
 		}
 	}
