@@ -13,7 +13,8 @@
 		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
-		"appId": "wxf8cf7687566b7cb5"
+		"appId": "wxf8cf7687566b7cb5",
+    "cloundRoot": './static/functions'
 	},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},

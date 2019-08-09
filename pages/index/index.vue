@@ -16,7 +16,8 @@
 
 <script>
 	import medinceData from '@/data/medince'
-	let _ = require('lodash')
+	let shuffle = require('lodash.shuffle')
+  let random = require('lodash.random')
 
 	export default {
 		data() {
@@ -87,7 +88,7 @@
 				let problems = []
 				let s = new Set()
 				while (problems.length < 5) {
-					let idx = _.random(0, medinceData.data.length - 1)
+					let idx = random(0, medinceData.data.length - 1)
 					if (s.has(idx)) {
 						continue
 					}
@@ -95,7 +96,7 @@
 					s.add(idx)
 				}
 				this.problems = JSON.parse(JSON.stringify(problems))
-				this.randomAns = _.shuffle(problems.map(x => x.effect))
+				this.randomAns = shuffle(problems.map(x => x.effect))
 				// console.log(problems,.this.randomAns)
 				// wx.cloud.callFunction({
 				//   name: 'get-problems',

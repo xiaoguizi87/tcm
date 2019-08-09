@@ -15,20 +15,20 @@
     </view>
     <button v-if="problemIdx === 9" @click="postAnswer" type="primary">提交答案</button>
     <button class='shareBtn' open-type="share">分享</button>
-
   </view>
 </template>
 
 <script>
   import medinceData from '@/data/medince'
-  let _ = require('lodash')
+  let random = require('lodash.random')
+  let shuffle = require('lodash.shuffle')
 
   function generateOptions(p) {
     let opts = [p.effect]
     let s = new Set()
     s.add(p.effect)
     while (opts.length < 4) {
-      let idx = _.random(0, medinceData.data.length - 1)
+      let idx = random(0, medinceData.data.length - 1)
       // console.log(idx)
       if (s.has(medinceData.data[idx].effect)) {
         continue
@@ -37,11 +37,11 @@
       opts.push(medinceData.data[idx].effect)
     }
     // console.log(p)
-    return _.shuffle(opts)
+    return shuffle(opts)
   }
 
   function generateProblems() {
-    let problems = _.shuffle(medinceData.data).slice(0, 10)
+    let problems = shuffle(medinceData.data).slice(0, 10)
     for (let p of problems) {
       p.options = generateOptions(p)
       console.log(p)
@@ -105,6 +105,7 @@
             break;
           }
         }
+        this.problemIdx = Math.min(9, this.problemIdx + 1)
       },
       selectOption: function(idx) {
         this.checkedValues[this.problemIdx] = idx
@@ -180,4 +181,10 @@
   .pageText {
     line-height: 60rpx;
   }
+
+  /*  .slide-fade-enter-active {
+  }
+
+  .slide-fade-leave-active {
+  } */
 </style>
