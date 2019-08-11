@@ -29,7 +29,11 @@
 				"ff-canvas": "@antv/f2-canvas"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/log/log",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "趣学中草药",

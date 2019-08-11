@@ -20,6 +20,8 @@
 
 <script>
   import medinceData from '@/data/medince'
+  import util from '../../utils/index.js'
+
   let random = require('lodash.random')
   let shuffle = require('lodash.shuffle')
 
@@ -94,6 +96,7 @@
           fail: () => {},
           complete: () => {}
         });
+        util.insertLogDb('测一测', score)
       },
       radioChange: function(evt) {
         let opts = this.quections[this.problemIdx].options

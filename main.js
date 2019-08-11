@@ -9,3 +9,19 @@ wx.cloud.init({
 })
 const app = new Vue(App)
 app.$mount()
+
+
+
+
+wx.cloud.callFunction({
+  name: 'get-problems',
+  data: {}
+}).then(res => {
+  console.log(res.result.problems)
+  let OPENID = res.result.OPENID
+  wx.setStorage({
+    key: "OPENID",
+    data: OPENID
+  })
+  console.log(OPENID)
+})

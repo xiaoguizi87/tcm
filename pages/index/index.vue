@@ -16,6 +16,8 @@
 
 <script>
 	import medinceData from '@/data/medince'
+  import util from '../../utils/index.js'
+  
 	let shuffle = require('lodash.shuffle')
   let random = require('lodash.random')
 
@@ -76,6 +78,7 @@
 								this.rightClicked = -1
 							}
 						})
+            util.insertLogDb('连一连', 0)
 					}
 				} else {
 					this.leftClicked = -1
