@@ -27,7 +27,7 @@ function insertLogDb(logType, params) {
     data: {
       logType: logType,
       params: JSON.stringify(params),
-      time: formatTime(new Date())
+      time: new Date()
     }
   })
 }
