@@ -9,7 +9,7 @@
 </template>
 
 <script>
-	import util from '../../utils/index.js'
+	const utils = require('../../utils/index.js')
 
 	export default {
 		data() {
@@ -22,20 +22,11 @@
 			}
 		},
 		onLoad() {
-			let openId = wx.getStorageSync('OPENID')
-			const db = wx.cloud.database()
-			let logs = db.collection('studyLog').where({
-				_openid: openId
-			}).get().then(res => {
-				for (let i = 0; i < res.data.length; i++) {
-					this.logs.unshift({
-						logType: res.data[i].logType,
-						time: util.formatTime(res.data[i].time)
-					})
-				}
+			utils.getStudyLogIn7Days().then(res => {
+				console.log(res)
+				this.logs = res
 			})
 		},
-
 		onShareAppMessage: function(options) {
 			console.log('分享的代码！！')
 		}
