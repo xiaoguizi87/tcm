@@ -105,7 +105,7 @@
 				console.log(opts)
 				for (let i = 0; i < opts.length; i++) {
 					if (opts[i] === evt.target.value) {
-						this.checkedValues[this.problemIdx] = i;
+						this.$set(this.checkedValues, this.problemIdx, i)
 						break;
 					}
 				}
@@ -114,7 +114,11 @@
 				}, 500)
 			},
 			selectOption: function(idx) {
-				this.checkedValues[this.problemIdx] = idx
+				console.log('clicked')
+				this.$set(this.checkedValues, this.problemIdx, idx)
+				this.timer = setTimeout(() => {
+					this.problemIdx = Math.min(9, this.problemIdx + 1)
+				}, 500)				
 			},
 			handleNext() {
 				if (this.timer) {
