@@ -28,7 +28,7 @@
 				_openid: openId
 			}).get().then(res => {
 				for (let i = 0; i < res.data.length; i++) {
-					this.logs.push({
+					this.logs.unshift({
 						logType: res.data[i].logType,
 						time: util.formatTime(res.data[i].time)
 					})
