@@ -27,7 +27,7 @@ function insertLogDb(logType, params) {
 		data: {
 			logType: logType,
 			params: JSON.stringify(params),
-			time: new Date()
+			time: db.serverDate()
 		}
 	})
 }
@@ -36,7 +36,10 @@ async function getStudyLog() {
 	let openId = wx.getStorageSync('OPENID')
 	const db = wx.cloud.database()
 	let res = await db.collection('studyLog').where({
-		_openid: openId
+		_openid: openId,
+		"time": db.command.gte(db.serverDate({
+			offset: -86400 * 7 * 1000
+		}))
 	}).get();
 	let logs = []
 	for (let i = 0; i < res.data.length; i++) {
@@ -45,28 +48,20 @@ async function getStudyLog() {
 			time: formatTime(res.data[i].time)
 		})
 	}
-	// console.log(logs)
 	return logs
 }
 
 async function getStudyLogIn7Days() {
-	// var inputDate = new Date(myDate.toISOString());
-	var inputDate = new Date();
-	// MyModel.find({
-	// 	'date': {
-	// 		$lte: inputDate
-	// 	}
-	// })
-
 	let openId = wx.getStorageSync('OPENID')
-	console.log(inputDate)
 	const db = wx.cloud.database()
+	const _ = db.command
+	console.log(openId)
 	let res = await db.collection('studyLog').where({
 		_openid: openId,
-		time: {
-			$lt: new Date(),
-			$gte: new Date(new Date().setDate(new Date().getDate() - 1))
-		}
+		"time": db.command.gte(db.serverDate({
+			offset: -86400 * 7 * 1000
+		}))
+
 	}).get();
 	let logs = []
 	for (let i = 0; i < res.data.length; i++) {
@@ -75,7 +70,6 @@ async function getStudyLogIn7Days() {
 			time: formatTime(res.data[i].time)
 		})
 	}
-	// console.log(logs)
 	return logs
 }
 

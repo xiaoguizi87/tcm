@@ -22,7 +22,7 @@
 			}
 		},
 		onLoad() {
-			utils.getStudyLogIn7Days().then(res => {
+			utils.getStudyLog().then(res => {
 				console.log(res)
 				this.logs = res
 			})
