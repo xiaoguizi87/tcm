@@ -58,7 +58,7 @@
 				quections: [],
 				problemIdx: -1,
 				checkedValues: [],
-				timer: undefined
+				timer: undefined,
 			}
 		},
 
