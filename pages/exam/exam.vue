@@ -83,11 +83,15 @@
 						return
 					}
 				}
-				let score = this.calcScore()
+				let [score, wrongAns] = this.calcScore()
 				let title = this.getTitleByScore(score)
+        let txt = ''
+        wrongAns.forEach((name) => {
+          txt = txt + name + ' ' + this.getEffectByName(name)
+        })
 				uni.showModal({
 					title: '测试结果',
-					content: `您的分数是${score}分,获得"${title}"的称号`,
+					content: `您的分数是${score}分,获得"${title}"的称号\n\n答错的中药如下:\n${wrongAns}`,
 					showCancel: true,
 					cancelText: '取消',
 					confirmText: '重来',
@@ -134,13 +138,16 @@
 			},
 			calcScore() {
 				console.log(this.checkedValues[0])
+        let errorMedice = []
 				let count = 0
 				for (let i = 0; i < 10; i++) {
 					if (this.quections[i].rightIndex === this.checkedValues[i]) {
 						count++
-					}
+					} else {
+            errorMedice.push(this.quections[i].name)
+          }
 				}
-				return count * 10
+				return [count * 10, errorMedice]
 			},
 			getTitleByScore(score) {
 				if (score < 20) {
@@ -157,6 +164,14 @@
 					return '药仙'
 				}
 			},
+      getEffectByName(name) {
+        for (let it of medinceData.data) {
+          if (it.name === name) {
+            // console.log(it)
+            return it.effect
+          }
+        }
+      },
 			onShareAppMessage: function(options) {
 				console.log('分享的代码！！')
 			}
