@@ -3,6 +3,7 @@
     <cmd-notice-bar scrollable text="如果你喜欢本程序,请收藏到我的小程序中"></cmd-notice-bar>
     <open-data class='icon' mode='aspectFit' type='userAvatarUrl'></open-data>
     <button class='bt' type="info" @click='goto("/pages/study/index")'>学习园地</button>
+    <button class='bt' type="info" @click='goto("/pages/wrongbook/wrongbook")'>错题本</button>
     <button class='bt' type="info" @click='goto("/pages/log/log")'>学习记录</button>
     <button class='bt' type="info" open-type='share'>分享程序</button>
     <button class='bt' plain type="primary" open-type='feedback'>意见反馈</button>

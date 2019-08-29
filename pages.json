@@ -33,6 +33,10 @@
             "path" : "pages/log/log",
             "style" : {}
         }
+        ,{
+            "path" : "pages/wrongbook/wrongbook",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
