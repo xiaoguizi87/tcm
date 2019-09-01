@@ -123,7 +123,7 @@
 
     created() {
       this.fetchProblems()
-      utils.insertWrongBook('前胡', '降气化痰，散风清热')
+      // utils.insertWrongBook('前胡', '降气化痰，散风清热')
     },
 
     onShareAppMessage: function(options) {

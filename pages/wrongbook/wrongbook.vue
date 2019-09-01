@@ -20,12 +20,14 @@
         openid: "",
         data: [],
         currenIndex: 1,
+        totalPage: 1
       };
     },
     onLoad() {
       utils.getWrongBook().then(res => {
         console.log(res)
         this.data = res
+        this.totalPage = parseInt((this.data.length+4) / 5)
       })
     },
     methods: {

@@ -28,7 +28,7 @@
 				data: [],
 				currenIndex: 1,
 				oldPoint: {},
-				totalPage: parseInt(medinceData.data.length / 5),
+				totalPage: parseInt((medinceData.data.length+4) / 5) ,
 				nameSwitch: true,
 				effectSwitch: true
 			};
