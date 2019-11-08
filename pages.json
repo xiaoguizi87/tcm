@@ -34,15 +34,6 @@
     }, {
       "path": "pages/wrongbook/wrongbook",
       "style": {}
-    }, {
-      "path": "pages/xmadPage/collect/index",
-      "style": {}
-    }, {
-      "path": "pages/xmadPage/copyInfo/index",
-      "style": {}
-    }, {
-      "path": "pages/xmadPage/sell/index",
-      "style": {}
     }
   ],
   "globalStyle": {

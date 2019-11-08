@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App'
 // optionally import default styles
-import 'static/xmSdk/xmadx_sdk'
 
 Vue.config.productionTip = false
 App.mpType = 'app'

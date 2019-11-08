@@ -175,8 +175,12 @@
           }
         }
       },
-      onShareAppMessage: function(options) {
-        console.log('分享的代码！！')
+    },
+    onShareAppMessage: function(options) {
+      console.log('分享的代码！！')
+      return {
+        title: '快来比一比中药功效知多少？',
+        path: 'pages/exam/exam'
       }
     }
   }
