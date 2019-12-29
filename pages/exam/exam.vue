@@ -1,5 +1,6 @@
 <template>
   <view class="container">
+    <ad unit-id="adunit-821d750d4b5e450e"></ad>
     <view v-for="(item,index) in quections" :key="index" v-if="index === problemIdx" class='content'>
       <text class='title'><text class="medinceName">{{item.name}}</text> 的功效是：</text>
       <radio-group @change="radioChange">
@@ -14,6 +15,7 @@
       <button @click='handleNext()' :disabled="problemIdx === 9" class='pageBtn'>下一题</button>
     </view>
     <button v-if="problemIdx === 9" @click="postAnswer" type="primary">提交答案</button>
+    
     <button class='shareBtn' open-type="share">分享</button>
   </view>
 </template>
@@ -188,7 +190,7 @@
 
 <style lang='scss'>
   .content {
-    margin-top: 100rpx;
+    margin-top: 15rpx;
     text-align: left;
     width: 90%;
   }

@@ -68,6 +68,9 @@
     }],
     "position": "bottom"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx9f2787d263ca3aae"
+  ],
   "condition": { //模式配置，仅开发期间生效
     "current": 0, //当前激活的模式(list 的索引项)
     "list": [{

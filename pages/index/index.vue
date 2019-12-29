@@ -10,8 +10,7 @@
         </view>
       </view>
     </transition>
-
-    <button class='shareBtn' open-type="share">分享</button>
+    <ad unit-id="adunit-821d750d4b5e450e"></ad>
   </view>
 </template>
 

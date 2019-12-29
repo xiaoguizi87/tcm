@@ -5,8 +5,9 @@
     <button class='bt' type="info" @click='goto("/pages/study/index")'>学习园地</button>
     <button class='bt' type="info" @click='goto("/pages/wrongbook/wrongbook")'>错题本</button>
     <button class='bt' type="info" @click='goto("/pages/log/log")'>学习记录</button>
-    <button class='bt' type="info" open-type='share'>分享程序</button>
     <button class='bt' plain type="primary" open-type='feedback'>意见反馈</button>
+    <button class='bt' plain type="primary" @click='gotoOtherMiniProgram()'>趣学小学数学</button>
+    <button class='shareBtn' open-type="share">分享</button>
   </div>
 </template>
 <script>
@@ -41,6 +42,21 @@
       goto: function(url) {
         uni.navigateTo({
           url
+        })
+      },
+      gotoOtherMiniProgram: function() {
+        console.log('begin jump')
+        wx.navigateToMiniProgram({
+          appId: 'wx9f2787d263ca3aae',
+          path: 'pages/index/index',
+          envVersion: 'release',
+          success(res) {
+            // 打开成功
+            console.log('test')
+          },
+          fail(res) {
+            console.log(res)
+          }
         })
       }
     },
