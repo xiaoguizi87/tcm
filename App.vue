@@ -23,7 +23,7 @@
 	
 	.shareBtn {
 		position: fixed;
-		bottom: 150rpx;
+		top: 100rpx;
 		right: -5rpx;
 		width: 120rpx;
 		font-size: 10px;

@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <ad unit-id="adunit-821d750d4b5e450e"></ad>
+
     <view v-for="(item,index) in quections" :key="index" v-if="index === problemIdx" class='content'>
       <text class='title'><text class="medinceName">{{item.name}}</text> 的功效是：</text>
       <radio-group @change="radioChange">
@@ -13,10 +13,14 @@
       <button @click='handlePrev()' :disabled="problemIdx === 0" class='pageBtn'> 上一题</button>
       <text class="pageText">第{{problemIdx + 1}}题</text>
       <button @click='handleNext()' :disabled="problemIdx === 9" class='pageBtn'>下一题</button>
+
     </view>
     <button v-if="problemIdx === 9" @click="postAnswer" type="primary">提交答案</button>
-    
+    <!-- <ad unit-id="adunit-821d750d4b5e450e"></ad> -->
     <button class='shareBtn' open-type="share">分享</button>
+    
+    <ad unit-id="adunit-821d750d4b5e450e" v-if='problemIdx % 2 == 0'></ad>
+    <ad v-if='problemIdx % 2 != 0'unit-id="adunit-3e751c0ade5bfacf" ad-type="video" ad-theme="white"></ad>
   </view>
 </template>
 
